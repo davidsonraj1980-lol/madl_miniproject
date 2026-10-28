@@ -1,0 +1,50 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Flutter / Dart / Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Android build artifacts & local properties
+android/local.properties
+android/.gradle/
+.gradle/
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Local SDKs & Large Archives
+flutter/
+android-sdk/
+tools/
+backend/
+lib_old_backup/
+*.zip
+*.bat
+
+# Environment & Secrets
+.env
+.env.*
+*.env

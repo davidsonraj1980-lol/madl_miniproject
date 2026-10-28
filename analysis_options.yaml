@@ -1,0 +1,9 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "flutter/**"
+    - "android-sdk/**"
+    - "backend/**"
+    - "tools/**"
+    - "lib_old_backup/**"
