@@ -1,4 +1,4 @@
-package com.pureroute.anti_pollution_routes
+package com.compilelens.app
 
 import io.flutter.embedding.android.FlutterActivity
 

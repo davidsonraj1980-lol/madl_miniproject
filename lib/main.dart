@@ -169,7 +169,7 @@ class _CompileLensScreenState extends State<CompileLensScreen>
     final vm = VirtualMachineSimulator(codeGenResult.bytecode);
     final initialStep = vm.step(); // Execute first instruction
 
-    setState(() {
+    void updateState() {
       _tokens = tokens;
       _astRoot = ast;
       _semanticResult = semanticResult;
@@ -179,7 +179,13 @@ class _CompileLensScreenState extends State<CompileLensScreen>
       _selectedToken = tokens.isNotEmpty ? tokens.first : null;
       _selectedAstNode = ast.statements.isNotEmpty ? ast.statements.first : ast;
       _hardwareState = vm.hardwareState;
-    });
+    }
+
+    if (mounted) {
+      setState(updateState);
+    } else {
+      updateState();
+    }
   }
 
   void _loadPreset(CodePreset preset) {

@@ -39,7 +39,9 @@ class _HardwareViewState extends State<HardwareView> with SingleTickerProviderSt
 
   void _fitHardwareView() {
     if (!mounted) return;
-    final screenWidth = MediaQuery.of(context).size.width;
+    final mediaQuery = MediaQuery.maybeOf(context);
+    if (mediaQuery == null) return;
+    final screenWidth = mediaQuery.size.width;
     if (screenWidth < 680 && screenWidth > 0) {
       final scale = (screenWidth / 700).clamp(0.45, 0.95);
       _hwTransformController.value = Matrix4.identity()..scale(scale, scale, 1.0);

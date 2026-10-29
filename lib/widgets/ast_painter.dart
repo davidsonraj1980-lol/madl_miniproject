@@ -369,7 +369,9 @@ class _InteractiveASTCanvasState extends State<InteractiveASTCanvas> {
 
   void _fitTreeToScreen() {
     if (!mounted) return;
-    final screenWidth = MediaQuery.of(context).size.width;
+    final mediaQuery = MediaQuery.maybeOf(context);
+    if (mediaQuery == null) return;
+    final screenWidth = mediaQuery.size.width;
     if (_layoutResult.size.width > screenWidth && screenWidth > 0) {
       final scale = (screenWidth / (_layoutResult.size.width + 40)).clamp(0.45, 1.0);
       _transformController.value = Matrix4.identity()..scale(scale, scale, 1.0);
