@@ -43,6 +43,7 @@ backend/
 lib_old_backup/
 *.zip
 *.bat
+*.apk
 
 # Environment & Secrets
 .env
